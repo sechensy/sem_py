@@ -22,17 +22,20 @@
 # Напишите программу для нахождения максимального числа ягод, которое может собрать за один заход собирающий модуль, 
 # находясь перед некоторым кустом заданной во входном файле грядки.
 
-# N = int(input('Введите количество кустов: '))
-# list1 = list()
+N = int(input('Введите количество кустов: '))
+list1 = list()
 
-# for i in range(N):
-#     count = int(input('Введите количество черники на кусте: '))
-#     list1.append(count)
+for i in range(N):
+    count = int(input('Введите количество черники на кусте: '))
+    list1.append(count)
 
-# list_sum = list()
-# for i in range(N - 2):
-#     summs = list1[i] + list1[i + 1] + list1[i + 2]
-#     list_sum.append(summs)
-
-# M = max(list_sum)
-# print(M)
+list_sum = list()
+for i in range(N - 2):
+    summs = list1[i] + list1[i + 1] + list1[i + 2]
+    list_sum.append(summs)
+a = list1[0] + list1[-1] + list1[-2]
+list_sum.append(a)
+b = list1[0] + list1[1] + list1[-1]
+list_sum.append(b)
+M = max(list_sum)
+print(M)
